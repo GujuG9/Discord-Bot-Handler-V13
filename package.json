@@ -1,0 +1,26 @@
+{
+  "name": "discord-bot-handler-v13",
+  "version": "0.0.1",
+  "description": "A simple, easy to use, and customizable discord bot handler for discord.js v13+",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GujuG9/DIscord-Bot-Handler-V13.git"
+  },
+  "keywords": [
+    "Discord-Bot",
+    "Discord.js",
+    "V13",
+    "Handler",
+    "Gamemaster9"
+  ],
+  "author": "TheseGamemaster9#8566",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GujuG9/DIscord-Bot-Handler-V13/issues"
+  },
+  "homepage": "https://github.com/GujuG9/DIscord-Bot-Handler-V13#readme"
+}
