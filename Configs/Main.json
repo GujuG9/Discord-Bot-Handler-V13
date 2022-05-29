@@ -1,0 +1,9 @@
+{
+    "TOKEN": "OTc5NjE4NDY2MzUwOTExNTI4.GM1N2v.edUJcNH86WmNSulY6CtPhl_SRwa_SgU0jzfwIY",
+    "OONER": ["752083705782075462"],
+    "DEFAULT_COOLDOWN": 5, "COMMENT": "Enter the Cooldown amount in seconds only.",
+
+    "TESTMODE": false,
+    "TEST_GUILD": "790147208028618783",
+    "GLOBAL": false, "COMMENT_2": "If you are using Global slash commands then it will take upto an hour to load."
+}
