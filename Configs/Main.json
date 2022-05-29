@@ -1,5 +1,5 @@
 {
-    "TOKEN": "Enter Your Token Here",
+    "TOKEN": "Enter Your Bot Token Here",
     "OONER": ["752083705782075462"],
     "DEFAULT_COOLDOWN": 5, "COMMENT": "Enter the Cooldown amount in seconds only.",
 
