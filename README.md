@@ -92,6 +92,14 @@ Despict being a small project, I have made my best to make the handler as featur
 
 ---
 
+## 📜『 Support 』
+
+For any kind of support regarding this Handler please reach out directly to the author (Gamemaster9) over at Discord DMs.
+
+**Contact at: `TheseGamemaster9#8566`**
+
+---
+
 ## ✋『 Contribution 』
 
 **If you want to contribute towards this repository then follow these steps.**
