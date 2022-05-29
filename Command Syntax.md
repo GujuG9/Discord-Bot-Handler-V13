@@ -6,6 +6,7 @@
 
 ```js
 const D = require(`discord.js`);
+const colors = require(`colors`);
 
 module.exports = {
   name: "",
@@ -25,8 +26,9 @@ module.exports = {
 
 ### __BASICS__ :
 ```js
-// Having our Discord library and storing it into "D"
+// Having our required dependencies.
 const D = require(`discord.js`);
+const colors = require(`colors`);
 
 // Exporting all the needed stuffs.
 module.exports = {
