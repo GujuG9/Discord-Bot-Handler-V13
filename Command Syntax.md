@@ -59,7 +59,7 @@ module.exports = {
   // Cooldown for the command (in seconds). Default is 5 seconds. (Optional)
   cooldown: 5,
 ```
-### __Final this is to set the response!__
+### __Final thing is to set the response!__
 ```js
   // Running our command using `run: async() => {}` (Required)
   run: async (client, interaction) => {
