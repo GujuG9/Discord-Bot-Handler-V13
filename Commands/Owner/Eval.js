@@ -17,7 +17,7 @@ module.exports = {
   ooner: true,
   cooldown: 5,
 
-  run: async (interaction, Bot) => {
+  run: async (Bot, interaction) => {
     EVAL_CODE = interaction.options.getString("code");
     if (EVAL_CODE.includes(`token`)) {
       return console.log(`[ALERT] NO TOKEN GRABBING HEHE...`.bold.red);
