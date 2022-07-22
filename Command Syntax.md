@@ -17,7 +17,7 @@ module.exports = {
   roles: ["", ""],
   cooldown: 5,
 
-  run: async (client, interaction) => {
+  run: async (Bot, interaction) => {
   },
 };
 ```
@@ -64,7 +64,7 @@ module.exports = {
 ### __Final thing is to set the response!__
 ```js
   // Running our command using `run: async() => {}` (Required)
-  run: async (client, interaction) => {
+  run: async (Bot, interaction) => {
       // Do some stuff once the command is run...
   },
 };
