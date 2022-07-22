@@ -17,10 +17,10 @@ module.exports = async (Bot) => {
     for (const file of EVENTS_FILES) {
       const EVENT = require(PATH.join(`../Events`, file));
       if (EVENT.once) {
-        Bot.once(EVENT.name, (...args) => EVENT.run(...args, Bot));
+        Bot.once(EVENT.name, (...args) => EVENT.run(Bot, ...args));
         TOTAL_FILES++;
       } else {
-        Bot.on(EVENT.name, (...args) => EVENT.run(...args, Bot));
+        Bot.on(EVENT.name, (...args) => EVENT.run(Bot, ...args));
         TOTAL_FILES++;
       }
     }
