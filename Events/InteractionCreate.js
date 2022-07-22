@@ -87,6 +87,6 @@ module.exports = {
 
     // Running our Actiual command now.
     const RUNED_COMMAND = Bot.commands.get(interaction.commandName)
-    await RUNED_COMMAND.run(interaction, Bot);
+    await RUNED_COMMAND.run(Bot, interaction);
   },
 };
