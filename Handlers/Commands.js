@@ -119,7 +119,7 @@ module.exports = (Bot) => {
         );
         console.log(
           `[INFO] `.bold.red +
-            `Since you are using Blobal option, It might take an hour or more than that to depoly in all guilds possible.`
+            `Since you are using Global option, It might take an hour or more than that to depoly in all guilds possible.`
               .bold.brightBlue
         );
         return;
