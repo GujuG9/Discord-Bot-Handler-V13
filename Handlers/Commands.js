@@ -14,45 +14,65 @@ module.exports = (Bot) => {
   // Gettign our all command files.
   FS.readdirSync("Commands/").forEach((dir) => {
     // If their is a folder in the Commands's dir then get files out of it.
-    if(FS.lstatSync(`./Commands/${dir}`).isDirectory()) {
-      COMMAND_FILES_FOLDER = FS.readdirSync(`Commands/${dir}`).filter((file) => file.endsWith(".js"));
+    if (FS.lstatSync(`./Commands/${dir}`).isDirectory()) {
+      COMMAND_FILES_FOLDER = FS.readdirSync(`Commands/${dir}`).filter((file) =>
+        file.endsWith(".js")
+      );
       try {
         // Using a For loop and storing all the commands in our COMMANDS array.
         for (const file of COMMAND_FILES_FOLDER) {
-          const CMD_FILE_FOLDER = require(PATH.join(require.main.path, `Commands/${dir}`, file));
+          const CMD_FILE_FOLDER = require(PATH.join(
+            require.main.path,
+            `Commands/${dir}`,
+            file
+          ));
           if (CMD_FILE_FOLDER.name && CMD_FILE_FOLDER.description) {
             Bot.commands.set(CMD_FILE_FOLDER.name, CMD_FILE_FOLDER);
             const commandObj = {
               name: CMD_FILE_FOLDER.name.toLowerCase(),
               description: CMD_FILE_FOLDER.description,
             };
-            TOTAL_COMMANDS_COUNT++;
-            if (CMD_FILE_FOLDER.options)
+            if (CMD_FILE_FOLDER.options) {
               Object.assign(commandObj, { options: CMD_FILE_FOLDER.options });
+            }
+            if (CMD_FILE_FOLDER.type) {
+              Object.assign(commandObj, { type: CMD_FILE_FOLDER.type });
+            }
+            TOTAL_COMMANDS_COUNT++;
             COMMANDS.push(JSON.stringify(commandObj));
           }
         }
       } catch (error) {
         console.log(String(error.stack).bgRed);
       }
-    } 
+    }
   });
 
   // And also get all the files out from the main Commands' folder.
-  COMMAND_FILES = FS.readdirSync("Commands").filter((file) => file.endsWith(".js"));
+  COMMAND_FILES = FS.readdirSync("Commands").filter((file) =>
+    file.endsWith(".js")
+  );
   try {
     // Using a For loop and storing all the commands in our COMMANDS array.
     for (const file of COMMAND_FILES) {
-      const COMMAND_FILES = require(PATH.join(require.main.path, "Commands", file));
+      const COMMAND_FILES = require(PATH.join(
+        require.main.path,
+        "Commands",
+        file
+      ));
       if (COMMAND_FILES.name && COMMAND_FILES.description) {
         Bot.commands.set(COMMAND_FILES.name, COMMAND_FILES);
         const commandObj = {
           name: COMMAND_FILES.name.toLowerCase(),
           description: COMMAND_FILES.description,
         };
-        TOTAL_COMMANDS_COUNT++;
-        if (COMMAND_FILES.options)
+        if (COMMAND_FILES.options) {
           Object.assign(commandObj, { options: COMMAND_FILES.options });
+        }
+        if (COMMAND_FILES.type) {
+          Object.assign(commandObj, { type: COMMAND_FILES.type });
+        }
+        TOTAL_COMMANDS_COUNT++;
         COMMANDS.push(JSON.stringify(commandObj));
       }
     }
@@ -65,7 +85,6 @@ module.exports = (Bot) => {
   } catch (error) {
     console.log(String(error.stack).bgRed);
   }
-
 
   // Once the commands are loaded, now it's time to deploy them to our Discord bot once the bot is online!
   Bot.on("ready", async () => {
@@ -119,8 +138,8 @@ module.exports = (Bot) => {
         );
         console.log(
           `[INFO] `.bold.red +
-            `Since you are using Global option, It might take an hour or more than that to depoly in all guilds possible.`
-              .bold.brightBlue
+            `Since you are using Blobal option, It might take an hour or more than that to depoly in all guilds possible.`
+              .bold.yellow
         );
         return;
       }
