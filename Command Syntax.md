@@ -11,6 +11,7 @@ const colors = require(`colors`);
 module.exports = {
   name: "",
   description: "",
+  type: "",
   options: [],
   ooner: false,
   permissions: ["", ""],
@@ -40,6 +41,8 @@ module.exports = {
 ```
 ### __For extra options and settings__ :
 ```js
+  // For type of command. i.e. "CHAT_INPUT" = 1, "USER" = 2, "MESSAGE" = 3. Default is 1.
+  type: "",
   // Adding some extra options for commands. (Optional)
   options: [
   
