@@ -3,7 +3,7 @@ const MS = require("ms");
 // Running our InteractionCreate event.
 module.exports = {
   name: "interactionCreate",
-  run: async (interaction, Bot) => {
+  run: async (Bot, interaction) => {
     // Checking if the interaction is a command or not. If not then return.
     if (!interaction.isCommand()) return;
     // Checking if the command still exist in the Main commands' folder. If not then return.
@@ -84,9 +84,23 @@ module.exports = {
         });
       }
     }
+    // Running our Actual command now.
+    const CMD = Bot.commands.get(interaction.commandName);
+    await CMD.run(Bot, interaction);
 
-    // Running our Actiual command now.
-    const RUNED_COMMAND = Bot.commands.get(interaction.commandName)
-    await RUNED_COMMAND.run(Bot, interaction);
+    // For Buttons
+    if (interaction.isButton()) {
+    }
+    // For Select menus
+    if (interaction.isSelectMenu()) {
+    }
+    // For Context menus
+    if (interaction.isContextMenu()) {
+      await interaction.deferReply({ ephemeral: false });
+      const CMD = Bot.commands.get(interaction.commandName);
+      if (CMD) {
+        await CMD.run(Bot, interaction);
+      }
+    }
   },
 };
