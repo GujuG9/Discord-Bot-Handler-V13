@@ -4,14 +4,18 @@ const colors = require("colors");
 module.exports = {
   name: "ready",
   once: true,
-  run: async(Bot) => {
-  try{
-    console.log(
-      `[INFO] `.bold.red + `Ready! Logged in as ${Bot.user.tag}`.bold.brightBlue
-    );
-  } catch (error){
-    console.log(String(error.stack).bgRed);
-  }
+  run: async (Bot) => {
+    try {
+      console.log(
+        `[INFO] `.bold.red +
+          `Ready! Logged in as ${Bot.user.tag}`.bold.brightBlue
+      );
+      Bot.user.setActivity(`/help in ${Bot.guilds.cache.size} servers!`, {
+        type: "PLAYING",
+      });
+    } catch (error) {
+      console.log(String(error.stack).bgRed);
+    }
     try {
       console.log(
         `
